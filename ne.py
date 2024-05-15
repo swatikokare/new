@@ -49,12 +49,17 @@ st.set_page_config(page_title="Recommendation System", layout="wide")
 st.title("Movies and Music Recommendation System")
 
 # Load movie data
+
 try:
-    movies = pickle.load(open('D:\\Desktop\\6th sem\\CAD\\movie\\artifacts\\movie_list.pkl', 'rb'))
-    similarity = pickle.load(open('D:\\Desktop\\6th sem\\CAD\\movie\\artifacts\\similarity.pkl', 'rb'))
+    movies = pickle.load(open('artifacts/movie_list.pkl', 'rb'))
+    similarity = pickle.load(open('artifacts/similarity.pkl', 'rb'))
 except FileNotFoundError:
     st.error("Error: Pickle file not found.")
     st.stop()
+
+
+
+
 
 # Define layout for movie recommendations
 st.header("Movie Recommendations")
